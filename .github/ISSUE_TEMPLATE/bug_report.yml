@@ -20,7 +20,8 @@ body:
           - **Flutter**: 2.5.2
           - **Dart**: 3.6.0
           - **Plugin version**: 1.0.2
-        Android information (optional): 
+        
+        Android info (optional): 
           - **OS**: Android 11
           - **Device**: Pixel 5
       placeholder: |
