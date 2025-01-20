@@ -1,7 +1,7 @@
 # Android plugin (devdf_android)
 
 <a href="https://github.com/devdfcom/android_plugin#readme">
-    <img src="https://github.com/user-attachments/assets/3896d28f-e53b-4153-b67a-e4ab8c1ec541" alt="devdf_android" title="DevDF Android Plugin" align="right" height="150" />
+    <img src="https://github.com/user-attachments/assets/3896d28f-e53b-4153-b67a-e4ab8c1ec541" alt="devdf_android" title="DevDF Android Plugin" align="right" height="120" />
 </a>
 
 [![License: MIT](https://img.shields.io/github/license/devdfcom/android_plugin?style=flat&color=mediumseagreen)](https://opensource.org/licenses/MIT)
@@ -21,11 +21,11 @@ Commonly used methods collection for android app.
 ### <ins>Table of Contents:</ins>
 
 1. 🤖 [**Android plugin stack**](#android-plugin-stack)
-2. 🛠️ [**Installation**](#️installation)
+2. 🛠️ [**Installation**](#️install-section)
 3. 🗂️️ [**Available methods**](#available-methods)
     - 📄 [PackageInfo](#packageinfo) ([*usage*](#packageinfo-usage) 👁️‍🗨️)
 4. 🗃️ [**Plugin Exceptions**](#plugin-exceptions)
-5. 📦 [**Changelog**](#changelog)
+5. 📦 [**Changelog**](#changelog-section)
 6. ⁉️ [**Help & Questions**](#help--questions)
 7. 🌱 [**Contributing**](#contributing)
 
@@ -40,7 +40,7 @@ Commonly used methods collection for android app.
 - Gradle v8.12.0 (Android Gradle Plugin v8.8.0)
 - Java 17 major version
 
-<a name="installation"></a>
+<a name="install-section"></a>
 
 ## 🛠️ Installation
 ```yaml
@@ -94,6 +94,8 @@ Plugin provides a set of exceptions that can be thrown during the plugin operati
 Common exceptions for all channels:
 
 - `AlreadyRunningException` Thrown when the same method is already in progress.
+
+<a name="changelog-section"></a>
 
 ## 📦 Changelog
 
