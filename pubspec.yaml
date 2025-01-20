@@ -1,0 +1,41 @@
+name: devdf_android
+description: "Commonly used methods collection for android app."
+version: 0.0.1
+repository: https://github.com/devdfcom/android_plugin
+issue_tracker: https://github.com/devdfcom/android_plugin/issues
+
+environment:
+  sdk: ^3.6.0
+  flutter: '>=3.3.0'
+
+flutter:
+  plugin:
+    platforms:
+      android:
+        package: devdf.plugins.android
+        pluginClass: DevDFPlugin
+
+dependencies:
+  flutter:
+    sdk: flutter
+  plugin_platform_interface: ^2.1.8
+
+dev_dependencies:
+  devdf_linter:
+    git:
+      url: git@github.com:devdfcom/data.git
+      path: packages/devdf_linter
+  flutter_test:
+    sdk: flutter
+
+topics:
+  - information
+  - package
+
+funding:
+  - https://github.com/sponsors/devdfcom
+  - https://ko-fi.com/devdf
+
+
+
+

@@ -1,0 +1,122 @@
+name: Report a bug 🐞
+description: You found a bug in the plugin? Let us know!
+labels: [ "bug" ]
+body:
+  - type: markdown
+    attributes:
+      value: "**Issue tracker is ONLY used for reporting bugs. New features should be discussed in the [Discussions](../discussions) tab!**"
+  - type: checkboxes
+    attributes:
+      label: Is there an existing issue or discussion for this?
+      description: Please check whether an issue or discussion already exists for the bug that occurred.
+      options:
+        - label: I have searched the existing issues & discussions
+          required: true
+  - type: textarea
+    attributes:
+      label: Primary Information
+      description: |
+        Common info:
+          - **Flutter**: 2.5.2
+          - **Dart**: 3.6.0
+          - **Plugin version**: 1.0.2
+        Android information (optional): 
+          - **OS**: Android 11
+          - **Device**: Pixel 5
+      placeholder: |
+        - Flutter: v3.27.0
+        - Dart: v3.6.0
+        - Plugin version: 1.0.0
+      render: markdown
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Steps to Reproduce
+      description: Steps to reproduce the behavior. Include code, if relevant.
+      placeholder: |
+        1. Tap '...'
+        2. Action '...'
+        3. Run '...'
+        4. See error...
+        ...
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Expected Behavior
+      description: A clear and concise description of what should happen.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Current/Actual Behavior
+      description: A clear and concise description of what happens instead of the expected behavior.
+    validations:
+      required: true
+  - type: textarea
+    attributes:
+      label: Code sample
+      description: |
+        Please create a minimal reproducible sample that shows the problem
+        and attach it below between the lines with the backticks.
+
+        Alternatively, you can use https://dartpad.dev/ or create a public GitHub
+        repository to share your sample.
+
+        Without this we will unlikely be able to progress on the issue, and because of that
+        we regretfully will have to close it.
+
+        Note: Please do not upload screenshots of text. Instead, use code blocks
+        or the above mentioned ways to upload your code sample.
+      value: |
+        <details open><summary>Code sample</summary>
+
+        ```dart
+        [Paste your code here]
+        ```
+
+        </details>
+  - type: textarea
+    attributes:
+      label: Screenshots or Video
+      description: |
+        Upload any screenshots or video of the bug if applicable.
+      value: |
+        <details open>
+        <summary>Screenshots / Video demonstration</summary>
+
+        [Upload media here]
+
+        </details>
+  - type: textarea
+    attributes:
+      label: Debug Information, Logs
+      description: |
+        Add logs, stacktrace, or any other debug information that can help us.
+
+        If the logs are too large to be uploaded to GitHub, you may upload
+        them as a `txt` file or use online tools like https://pastebin.com to
+        share it.
+
+        Note: Please do not upload screenshots of text. Instead, use code blocks
+        or the above mentioned ways to upload logs.
+      value: |
+        <details open><summary>Logs / Debug information</summary>
+
+        ```console
+        [Paste your logs here]
+        ```
+
+        </details>  
+  - type: textarea
+    attributes:
+      label: Possible Solution
+      description: |
+        If you know why the bug occurs, please add a solution.
+      value: |
+        <details open><summary>Possible Solution</summary>
+
+        [Paste your solution here]
+
+        </details>  
