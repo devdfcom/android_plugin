@@ -21,7 +21,7 @@ Commonly used methods collection for android app.
 ### <ins>Table of Contents:</ins>
 
 1. 🤖 [**Android plugin stack**](#android-plugin-stack)
-2. 🛠️ [**Installation**](#️install-section)
+2. 🛠️ [**Installation**](#install-section)
 3. 🗂️️ [**Available methods**](#available-methods)
     - 📄 [PackageInfo](#packageinfo) ([*usage*](#packageinfo-usage) 👁️‍🗨️)
 4. 🗃️ [**Plugin Exceptions**](#plugin-exceptions)
