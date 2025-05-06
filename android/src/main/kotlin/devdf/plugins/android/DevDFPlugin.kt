@@ -15,7 +15,7 @@ class DevDFPlugin : FlutterPlugin, ActivityAware {
         const val BASE_CHANNEL = "devdf.plugins.android"
     }
 
-    /// Channel for actions, which can perform actions in background
+    /// Channel for actions, which can perform actions in the background
     private val bgActions = BgChannel(this)
 
 
@@ -39,7 +39,7 @@ class DevDFPlugin : FlutterPlugin, ActivityAware {
     /** All channels, which required Activity, must be initialized here */
     override fun onAttachedToActivity(binding: ActivityPluginBinding) {
         this.binding = binding
-        /// intent - activity channel goes here ex: intentActivity.startActivity();
+        /// intent - an activity channel goes here ex: intentActivity.startActivity();
     }
 
     override fun onDetachedFromActivityForConfigChanges() {

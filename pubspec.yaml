@@ -1,6 +1,6 @@
 name: devdf_android
 description: "Commonly used methods collection for android app."
-version: 0.0.1
+version: 0.0.2
 repository: https://github.com/devdfcom/android_plugin
 issue_tracker: https://github.com/devdfcom/android_plugin/issues
 
@@ -31,6 +31,7 @@ dev_dependencies:
 topics:
   - information
   - package
+  - region
 
 funding:
   - https://github.com/sponsors/devdfcom

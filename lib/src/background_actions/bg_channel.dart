@@ -1,4 +1,5 @@
 import 'package:devdf_android/src/data/package_info.dart';
+import 'package:devdf_android/src/data/regional_info.dart';
 import 'package:devdf_android/src/extensions/platform_exception_ext.dart';
 import 'package:flutter/material.dart' show visibleForTesting;
 import 'package:flutter/services.dart' show MethodChannel, PlatformException;
@@ -37,6 +38,16 @@ class BgChannel extends PlatformInterface {
     try {
       final info = await call<Map<dynamic, dynamic>>('package_info');
       return PackageInfo.fromMap(Map.from(info!));
+    } catch (e) {
+      return null;
+    }
+  }
+
+  /// Get regional info from device via locale & more
+  Future<RegionalInfo?> regionalInfo({String? locale}) async {
+    try {
+      final info = await call<Map<dynamic, dynamic>>('regional_info', {'locale': locale});
+      return RegionalInfo.fromMap(Map.from(info!));
     } catch (e) {
       return null;
     }

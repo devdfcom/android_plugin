@@ -15,6 +15,8 @@ Commonly used methods collection for android app.
 
 - Get app information.
   Inspired by [package_info_plus](https://pub.dev/packages/package_info_plus) plugin. Just for Android.
+- Get regional information for locales.
+  Get country, language, currency, date & time formats, separators, measure system & more.
 
 ## 📖 Documentation
 
@@ -24,6 +26,7 @@ Commonly used methods collection for android app.
 2. 🛠️ [**Installation**](#install-section)
 3. 🗂️️ [**Available methods**](#available-methods)
     - 📄 [PackageInfo](#packageinfo) ([*usage*](#packageinfo-usage) 👁️‍🗨️)
+    - 📄 [RegionalInfo](#regionalinfo) ([*usage*](#regionalinfo-usage) 👁️‍🗨️)
 4. 🗃️ [**Plugin Exceptions**](#plugin-exceptions)
 5. 📦 [**Changelog**](#changelog-section)
 6. ⁉️ [**Help & Questions**](#help--questions)
@@ -36,20 +39,21 @@ Commonly used methods collection for android app.
 - MinSDK Android 5.0 (API level 21)
 - Compiled with Android 15 (API level 35)
 - Android NDK v27.0.12077973
-- Kotlin v2.0.20
-- Gradle v8.12.0 (Android Gradle Plugin v8.8.0)
+- Kotlin v2.1.10
+- Gradle v8.12.0 (Android Gradle Plugin v8.9.2)
 - Java 17 major version
 
 <a name="install-section"></a>
 
 ## 🛠️ Installation
+
 ```yaml
 dependencies:
-  devdf_android: ^0.0.1
+  devdf_android: ^0.0.2
   git:
     url: git://github.com/devdfcom/android_plugin.git
 ```
-    
+
 <a name="available-methods"></a>
 
 ## 🗂️ Available methods, data classes
@@ -69,20 +73,87 @@ Class `PackageInfo` has the following properties:
 - `version` - Application version, fallback to empty string if not available ""
 - `build` - Application build number, if not available, will be "0"
 
-
 <a name="packageinfo-usage"></a>
 
 #### <ins>***PackageInfo Usage:***</ins>
+
 ```dart
 import 'package:devdf_android/devdf_android.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  
+
   final PackageInfo? info = await PackageInfo.get();
   print(info?.toString());
 }
 ```
+
+<a name="regionalinfo"></a>
+
+### 📄 RegionalInfo
+
+This class provides information about the regional settings for the device or requested locale.
+
+<ins>Class `RegionalInfo` has the following properties:</ins>
+
+#### ***Locale, language, country properties:***
+
+- `locale` - The locale as `String` representation.
+  Can contain `language + "_" + country + "_" + (
+  variant + "_#" | "#") + script + "_" + extensions`
+- `language` - `String` ISO 639 language code (e.g. "en", "ro", "fr")
+- `country` - `String?` ISO 3166 2-letter code, or a UN M.49 3-digit code. (e.g. "US", "RO", "591" etc.)
+
+#### ***Date & Time format, first day of the week:***
+
+- `firstDayOfWeek` - `int` The first day of the week, Starting from 1 (Sunday) to 7 (Saturday).
+- `timeFormat` - `int` The time format, where 0 = 12h, 1 = 24h
+- `dateShort` - `String` Short date format (yyyy-MM-dd)
+- `dateShorAlt` - `String` Short date format (dd/MM/yy)
+- `dateMedium` - `String` Medium date format (d MMM yyyy)
+- `dateMediumAlt` - `String` Medium date format (d MMMM yyyy)
+- `dateLong` - `String` Long date format (EEE, d MMM yyyy)
+- `dateLongAlt` - `String` Long date format (EEEE, d MMMM yyyy)
+
+#### ***Currency, measure system, separators:***
+
+- `decimalSeparator` - `String` Decimal separator (e.g. ".")
+- `thousandSeparator` - `String` Thousands separator (e.g. ",")
+
+
+- `currency` - `String?` Currency ISO 4217 currency code (e.g. "USD", "EUR", "RON", "GBP", "JPY", etc.)
+- `currencySymbol` - `String?` Currency symbol (e.g. "$", "€", "£", "¥", etc.)
+- `currencySymbolPosition` - `int?` Currency symbol position, where 0 = before amount, 1 = after amount
+- `currencyFractionDigits` - `int?` Currency fraction digits, The number of digits after the decimal separator.
+
+
+- `metricSystem` - `bool?` Whether the locale uses a metric system or not.
+    - `true` - Metric system (e.g. "cm", "kg", "°C")
+    - `false` - Imperial system (e.g. "in", "lb", "°F")
+
+<a name="regionalinfo-usage"></a>
+
+#### <ins>***RegionalInfo Usage:***</ins>
+
+```dart
+import 'package:devdf_android/devdf_android.dart';
+
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  /// Get regional information for the current locale of the device
+  final RegionalInfo? info = await RegionalInfo.get();
+
+  /// OR get regional information for the requested locale.
+  /// locale example: "en_US", "ro-RO", "fr"
+  /// If `locale` has only language code (e.g. "en"), it will not provide full information,
+  /// info like country, currency, measure system, will be null.
+  final RegionalInfo? info = await RegionalInfo.get(locale: "en_US");
+
+  print(info?.toString());
+}
+```
+
 <a name="plugin-exceptions"></a>
 
 ## 🗃️ Plugin Exceptions

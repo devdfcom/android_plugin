@@ -23,7 +23,7 @@ internal class BgChannel(override val plugin: DevDFPlugin) : ChannelInterface {
     override val queue = HashSet<String>()
 
     override fun onMethodCall(call: MethodCall, result: MethodChannel.Result) {
-        //1. Get the action, If the action is null, return not implemented
+        //1. Get the action If the action is null, return is not implemented
         val action = methods.getByName(call.method) ?: return result.notImplemented()
         //2. If the queue contains the method, return already running, otherwise add it to the queue
         if (!queue.add(call.method)) return result.alreadyRunning(call.method)
